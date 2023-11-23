@@ -7,8 +7,8 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/ferna/ApiGo/db"
-	"github.com/ferna/ApiGo/models"
+	"github.com/ferbrio1/ApiGo/db"
+	"github.com/ferbrio1/ApiGo/models"
 
 
 )
