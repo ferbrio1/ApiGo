@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  go-app:
+    container_name: go-app
+    image: ferna/go-app:1.0.0
+    build: .
+    environment:
+      DATABASE_URL: "host=go_db user=postgres password=123456 dbname=IceCream sslmode=disable"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - go_db
+
+  go_db:
+    container_name: ice-cream-dbpsql
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: postgres
+      POSTGRES_DB: IceCream
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
