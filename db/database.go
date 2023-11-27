@@ -10,7 +10,7 @@ import (
 )
 
 
-var DSN="host=go_db user=postgres password=123456 dbname=IceCream port=5432"
+var DSN="host=go-db user=postgres password=123456 dbname=IceCream port=5432"
 var DB *gorm.DB
 
 func DBconnection() {
