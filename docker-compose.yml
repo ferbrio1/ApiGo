@@ -6,11 +6,11 @@ services:
     image: ferna/go-app:1.0.0
     build: .
     environment:
-      DATABASE_URL: "host=go_db user=postgres password=123456 dbname=IceCream sslmode=disable"
+      DATABASE_URL: "host=go-db user=postgres password=123456 dbname=IceCream sslmode=disable"
     ports:
       - "3000:3000"
     depends_on:
-      - go_db
+      - go-db
 
   go_db:
     container_name: ice-cream-dbpsql
